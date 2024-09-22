@@ -1,7 +1,8 @@
 project(oc_cpp_part_2)
 
 set(EXE_1 using_string)
-# set(EXE_2 basic_types)
+add_subdirectory(classes)
+
 # set(EXE_3 io_and_operations)
 # set(EXE_4 project_1)
 # set(EXE_5 some_operations)
@@ -14,7 +15,7 @@ set(EXE_1 using_string)
 # set(EXE_13 pointers)
 
 set(EXE_SOURCES_1 using_string.cpp)
-# set(EXE_SOURCES_2 basic_types.cpp)
+
 # set(EXE_SOURCES_3 io_and_operations.cpp)
 # set(EXE_SOURCES_4 project_1.cpp)
 # set(EXE_SOURCES_5 some_operations.cpp)
@@ -27,7 +28,7 @@ set(EXE_SOURCES_1 using_string.cpp)
 # set(EXE_SOURCES_13 pointers.cpp)
 
 add_executable(${EXE_1} ${EXE_SOURCES_1})
-# add_executable(${EXE_2} ${EXE_SOURCES_2})
+
 # add_executable(${EXE_3} ${EXE_SOURCES_3})
 # add_executable(${EXE_4} ${EXE_SOURCES_4})
 # add_executable(${EXE_5} ${EXE_SOURCES_5})
@@ -36,7 +37,7 @@ add_executable(${EXE_1} ${EXE_SOURCES_1})
 # add_executable(${EXE_8} ${EXE_SOURCES_8})
 # add_executable(${EXE_9} ${EXE_SOURCES_9})
 
-# add_subdirectory(mini_lib_exec)
+
 
 # add_executable(${EXE_11} ${EXE_SOURCES_11})
 # add_executable(${EXE_12} ${EXE_SOURCES_12})
