@@ -29,5 +29,5 @@ public:
 private:
     int _vie{100}, _mana{100}, _degatsArme{10};
     Arme _monArme{};
-    std::string _nom{"no_name"};
+    std::string _nom = "no_name";
 };
