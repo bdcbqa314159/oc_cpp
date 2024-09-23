@@ -1,6 +1,6 @@
 project(classes)
 
-set(CLASSES_SOURCES classes.cpp personnage.cpp)
+set(CLASSES_SOURCES classes.cpp personnage.cpp arme.cpp)
 set(INCLUDE_DIRECTORIES ./)
 
 include_directories(${INCLUDE_DIRECTORIES})
