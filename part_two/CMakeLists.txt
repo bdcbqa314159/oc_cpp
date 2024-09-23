@@ -1,7 +1,7 @@
 project(oc_cpp_part_2)
 
 set(EXE_1 using_string)
-add_subdirectory(classes)
+
 
 # set(EXE_3 io_and_operations)
 # set(EXE_4 project_1)
@@ -37,10 +37,5 @@ add_executable(${EXE_1} ${EXE_SOURCES_1})
 # add_executable(${EXE_8} ${EXE_SOURCES_8})
 # add_executable(${EXE_9} ${EXE_SOURCES_9})
 
-
-
-# add_executable(${EXE_11} ${EXE_SOURCES_11})
-# add_executable(${EXE_12} ${EXE_SOURCES_12})
-# add_executable(${EXE_13} ${EXE_SOURCES_13})
-
-# add_subdirectory(project_3)
+add_subdirectory(classes)
+add_subdirectory(operators)
