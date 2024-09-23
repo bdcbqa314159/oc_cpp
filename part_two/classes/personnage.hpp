@@ -13,7 +13,10 @@ public:
     Personnage(std::string nomArme, int degatsArme, std::string nom);
     Personnage(Personnage const &) = default;
 
-    ~Personnage() = default;
+    Personnage(Personnage const &other);
+    Personnage &operator=(Personnage const &other);
+
+    ~Personnage();
 
     void recevoirDegats(int nbDegats);
 
@@ -27,7 +30,7 @@ public:
     void afficherEtat() const;
 
 private:
-    int _vie{100}, _mana{100}, _degatsArme{10};
-    Arme _monArme{};
+    int _vie{100}, _mana{100};
+    Arme *_monArme{nullptr};
     std::string _nom = "no_name";
 };

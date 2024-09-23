@@ -4,8 +4,27 @@ Personnage::Personnage(std::string nom) : _nom(nom)
 {
 }
 
-Personnage::Personnage(std::string nomArme, int degatsArme, std::string nom) : _monArme(nomArme, degatsArme), _nom(nom)
+Personnage::Personnage(std::string nomArme, int degatsArme, std::string nom) : _nom(nom)
 {
+    _monArme = new Arme(nomArme, degatsArme);
+}
+
+Personnage::Personnage(Personnage const &other) : _vie(other._vie), _mana(other._mana), _nom(other._nom)
+{
+    _monArme = new Arme(*other._monArme);
+}
+
+Personnage &Personnage::operator=(Personnage const &other)
+{
+    if (this != &other)
+    {
+        _vie = other._vie;
+        _mana = other._mana;
+        _nom = other._nom;
+        delete _monArme;
+        _monArme = new Arme(*other._monArme);
+    }
+    return *this;
 }
 
 void Personnage::recevoirDegats(int nbDegats)
@@ -18,7 +37,7 @@ void Personnage::recevoirDegats(int nbDegats)
 
 void Personnage::attaquer(Personnage &cible)
 {
-    cible.recevoirDegats(_degatsArme);
+    cible.recevoirDegats(_monArme->getDegats());
 }
 
 void Personnage::boirePotionDeVie(int quantitePotion)
@@ -31,7 +50,7 @@ void Personnage::boirePotionDeVie(int quantitePotion)
 
 void Personnage::changerArme(std::string nomNouvelleArme, int degatsNouvelleArme)
 {
-    _monArme.changer(nomNouvelleArme, degatsNouvelleArme);
+    _monArme->changer(nomNouvelleArme, degatsNouvelleArme);
 }
 
 bool Personnage::estVivant() const
@@ -44,6 +63,10 @@ void Personnage::afficherEtat() const
     std::cout << "Nom : " << _nom << std::endl;
     std::cout << "Vie : " << _vie << std::endl;
     std::cout << "Mana : " << _mana << std::endl;
-    std::cout << "Dégâts de l'arme : " << _degatsArme << std::endl;
-    _monArme.afficher();
+    _monArme->afficher();
+}
+
+Personnage::~Personnage()
+{
+    delete _monArme;
 }

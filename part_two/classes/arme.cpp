@@ -14,3 +14,8 @@ void Arme::afficher() const
 {
     std::cout << "Arme : " << _nom << " (Dégâts : " << _degats << ")" << std::endl;
 }
+
+int Arme::getDegats() const
+{
+    return _degats;
+}
