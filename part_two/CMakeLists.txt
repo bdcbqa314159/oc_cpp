@@ -39,3 +39,4 @@ add_executable(${EXE_1} ${EXE_SOURCES_1})
 
 add_subdirectory(classes)
 add_subdirectory(operators)
+add_subdirectory(inheritance)
