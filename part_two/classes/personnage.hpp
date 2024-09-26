@@ -1,36 +1,33 @@
 #pragma once
 
 #include <string>
-#include <iostream>
 
 #include "arme.hpp"
 
-class Personnage
-{
+class Personnage {
 public:
-    Personnage() = default;
-    Personnage(std::string nom);
-    Personnage(std::string nomArme, int degatsArme, std::string nom);
-    Personnage(Personnage const &) = default;
+  Personnage() = default;
+  Personnage(std::string nom);
+  Personnage(std::string nomArme, int degatsArme, std::string nom);
 
-    Personnage(Personnage const &other);
-    Personnage &operator=(Personnage const &other);
+  Personnage(Personnage const &other);
+  Personnage &operator=(Personnage const &other);
 
-    ~Personnage();
+  ~Personnage();
 
-    void recevoirDegats(int nbDegats);
+  void recevoirDegats(int nbDegats);
 
-    void attaquer(Personnage &cible);
-    void boirePotionDeVie(int quantitePotion);
+  void attaquer(Personnage &cible);
+  void boirePotionDeVie(int quantitePotion);
 
-    void changerArme(std::string nomNouvelleArme, int degatsNouvelleArme);
+  void changerArme(std::string nomNouvelleArme, int degatsNouvelleArme);
 
-    bool estVivant() const;
+  bool estVivant() const;
 
-    void afficherEtat() const;
+  void afficherEtat() const;
 
 private:
-    int _vie{100}, _mana{100};
-    Arme *_monArme{nullptr};
-    std::string _nom = "no_name";
+  int _vie{100}, _mana{100};
+  Arme *_monArme{nullptr};
+  std::string _nom = "no_name";
 };
