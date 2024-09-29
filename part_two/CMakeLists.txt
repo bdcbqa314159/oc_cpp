@@ -3,14 +3,17 @@ project(oc_cpp_part_2)
 set(EXE_1 using_string)
 set(EXE_2 the_sl)
 set(EXE_3 the_stl)
+set(EXE_4 iterators_functors)
 
 set(EXE_SOURCES_1 using_string.cpp)
 set(EXE_SOURCES_2 the_sl.cpp)
 set(EXE_SOURCES_3 the_stl.cpp)
+set(EXE_SOURCES_4 iterators_functors.cpp)
 
 add_executable(${EXE_1} ${EXE_SOURCES_1})
 add_executable(${EXE_2} ${EXE_SOURCES_2})
 add_executable(${EXE_3} ${EXE_SOURCES_3})
+add_executable(${EXE_4} ${EXE_SOURCES_4})
 
 add_subdirectory(classes)
 add_subdirectory(operators)
